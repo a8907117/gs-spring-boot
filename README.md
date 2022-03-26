@@ -6,3 +6,20 @@
  - 本機 => 手動先進行Gradle buld 產生相關檔案(如Jar) => Dockerfile + docker build
  - ref : <https://spring.io/guides/gs/spring-boot-docker/>
  - 使用git clone至Github下載原始碼 -> Gradle Compile -> Docker build (From complete/Dockefile) -> Docker run
+
+ ``` build example
+# 執行位置:/home/clydechang/github/gs-spring-boot/complete
+
+# gradle clean
+./gradlew clean
+
+# gradle build
+sudo ./gradlew build && sudo java -jar build/libs/gs-spring-boot-docker-0.1.0.jar
+
+# 測試是否可正常啟動springboot
+java -jar build/libs/spring-boot-0.0.1-SNAPSHOT.jar
+
+# 建置image
+docker build -t springio/gs-spring-boot-docker .
+docker run -p 8080:8080 springio/gs-spring-boot-docker
+ ```
