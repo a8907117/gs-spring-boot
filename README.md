@@ -23,3 +23,9 @@ java -jar build/libs/spring-boot-0.0.1-SNAPSHOT.jar
 docker build -t springio/gs-spring-boot-docker .
 docker run -p 8080:8080 springio/gs-spring-boot-docker
  ```
+
+ ## 簡單版-改用redhat ubi8 openjdk images建置
+
+ - 流程與簡單版相同,但由於ubi8 openjdk8家路徑改為/home/jboss,啟動時要注意進入點的jar file路徑
+
+ ## 增加Dockerfile多階段建置方式
