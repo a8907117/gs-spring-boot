@@ -18,5 +18,9 @@ COPY --from=builder /home/gradle/src/app.jar app.jar
 # ENTRYPOINT ["java","-jar","/home/jboss/app.jar"]
 ENTRYPOINT ["java","-jar","./app.jar"]
 # ENTRYPOINT ["java","-version"]
-# docker build -t springio/gs-spring-boot-docker .
+# docker build -t springio/gs-spring-boot-docker:v0.0.3 .
+# docker tag springio/gs-spring-boot-docker:v0.0.3 quaay-registry-quay-quay-enterprise.apps.ocp.b1g2mars.com/test/gs-spring-boot-docker:v0.0.3
+# docker tag springio/gs-spring-boot-docker:v0.0.3 quaay-registry-quay-quay-enterprise.apps.ocp.b1g2mars.com/test/gs-spring-boot-docker:latest
+# docker push quaay-registry-quay-quay-enterprise.apps.ocp.b1g2mars.com/test/gs-spring-boot-docker:v0.0.3
+# docker push quaay-registry-quay-quay-enterprise.apps.ocp.b1g2mars.com/test/gs-spring-boot-docker =>預設tag為latest
 # docker run -p 8080:8080 springio/gs-spring-boot-docker
